@@ -16,3 +16,11 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::apiResource('hospitals', 'HospitalController');
+
+Route::apiResource('/patients', 'PersonInfoController');
+
+Route::group(['prefix'=>'patients'], function(){
+	Route::apiResource('/medicalhist', 'MedicalInfoController');
+});
