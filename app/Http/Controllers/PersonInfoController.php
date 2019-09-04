@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Model\PersonInfo;
 use Illuminate\Http\Request;
+use App\Model\PersonInfo;
+use App\Http\Resources\Person\PersonResource;
 
 class PersonInfoController extends Controller
 {
@@ -15,6 +16,8 @@ class PersonInfoController extends Controller
     public function index()
     {
         //
+        return PersonInfo::all();
+
     }
 
     /**
@@ -41,21 +44,23 @@ class PersonInfoController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Model\PersonInfo  $personInfo
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(PersonInfo $personInfo)
+    public function show(PersonInfo $id)
     {
         //
+        //return PersonInfo::find($id);
+        return new PersonResource($id) ;
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Model\PersonInfo  $personInfo
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(PersonInfo $personInfo)
+    public function edit($id)
     {
         //
     }
@@ -64,10 +69,10 @@ class PersonInfoController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Model\PersonInfo  $personInfo
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, PersonInfo $personInfo)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -75,10 +80,10 @@ class PersonInfoController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Model\PersonInfo  $personInfo
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(PersonInfo $personInfo)
+    public function destroy($id)
     {
         //
     }

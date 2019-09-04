@@ -14,7 +14,7 @@ class HospitalController extends Controller
      */
     public function index()
     {
-        //
+        return Hospital::all();
     }
 
     /**
@@ -36,6 +36,7 @@ class HospitalController extends Controller
     public function store(Request $request)
     {
         //
+
     }
 
     /**
@@ -47,6 +48,7 @@ class HospitalController extends Controller
     public function show(Hospital $hospital)
     {
         //
+        return $hospital;
     }
 
     /**
