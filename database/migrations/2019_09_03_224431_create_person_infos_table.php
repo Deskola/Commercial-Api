@@ -15,6 +15,14 @@ class CreatePersonInfosTable extends Migration
     {
         Schema::create('person_infos', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('first_name');
+            $table->string('middle_name');
+            $table->string('last_name');
+            $table->integer('national_id')->unique();
+            $table->string('phone_number');
+            $table->date('d_o_b');
+            $table->text('address');
+            //$table->binary('image');            
             $table->timestamps();
         });
     }
