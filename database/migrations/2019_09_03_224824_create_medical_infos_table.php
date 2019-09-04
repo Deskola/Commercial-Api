@@ -21,7 +21,7 @@ class CreateMedicalInfosTable extends Migration
             $table->double('height');
             $table->double('temperature');
             $table->double('blood_pressure');
-            $table->double('reason_for_visit');
+            $table->text('reason_for_visit');
             $table->timestamps();
         });
     }
