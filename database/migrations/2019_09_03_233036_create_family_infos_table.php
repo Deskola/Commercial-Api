@@ -16,7 +16,7 @@ class CreateFamilyInfosTable extends Migration
         Schema::create('family_infos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('personal_id')->index();
-             $table->foreign('personal_id')->references('national_id')->on('person_infos')->onDelete('cascade');
+            $table->foreign('personal_id')->references('personal_id')->on('person_infos')->onDelete('cascade');
             $table->string('family_member');
             $table->string('hereditary_disease');
             $table->text('mental_condition');

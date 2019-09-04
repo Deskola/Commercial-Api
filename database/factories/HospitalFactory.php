@@ -10,7 +10,7 @@ $factory->define(Hospital::class, function (Faker $faker) {
         //
         'name'=>$faker->company,
         'address'=>$faker->address,
-        'username'=>$faker->numberBetween(100,10000),
+        'national_id'=>$faker->numberBetween(100,10000),
         'password'=>$faker->word,
     ];
 });

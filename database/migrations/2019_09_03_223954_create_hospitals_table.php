@@ -17,7 +17,7 @@ class CreateHospitalsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->text('address');
-            $table->integer('username');
+            $table->integer('national_id')->unique();
             //$table->foreign('username')->references('national_id')->on('person_infos')->onDelete('cascade');
             $table->string('password');
             //$table->binary('logo');

@@ -18,7 +18,8 @@ class CreatePersonInfosTable extends Migration
             $table->string('first_name');
             $table->string('middle_name');
             $table->string('last_name');
-            $table->integer('national_id')->unique();
+            $table->integer('personal_id')->index()->unique();
+            $table->foreign('personal_id')->references('national_id')->on('hospitals')->onDelete('cascade');
             $table->string('phone_number');
             $table->date('d_o_b');
             $table->text('address');
